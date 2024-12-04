@@ -1,9 +1,9 @@
 ﻿namespace ProjectEuler;
 
 // https://projecteuler.net/problem=1
-public class Problem1
+internal sealed class Problem1
 {
-    public int GetMultiplesOf3or5(int numsBelow)
+    internal int GetMultiplesOf3or5(int numsBelow)
     {
         int total = 0;
 

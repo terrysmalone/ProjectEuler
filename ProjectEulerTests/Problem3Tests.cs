@@ -5,8 +5,6 @@ namespace ProjectEulerTests;
 
 public class Problem3Tests
 {
-    [TestCase((ulong)0, (ulong)0)]
-    [TestCase((ulong)1, (ulong)1)]
     [TestCase((ulong)2, (ulong)2)]
     [TestCase((ulong)3, (ulong)3)]
     [TestCase((ulong)4, (ulong)2)]

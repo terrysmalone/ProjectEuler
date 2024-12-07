@@ -7,6 +7,38 @@ using System.Threading.Tasks;
 namespace ProjectEuler.Libraries;
 internal sealed class PrimeNumbers
 {
+    // Get the first num prime numbers
+    internal List<ulong> GetPrimeNumbers(ulong num)
+    {
+        if (num == 0)
+        {
+            throw new ArgumentException();
+        }
+
+        ulong current = 2;
+        List<ulong> primeNumbers = new List<ulong>() {  current };
+        ulong count = 1;
+
+        current = 3;
+        
+        while (count < num)
+        {
+            // Even numbers past 2 aren't prime
+            if (current % 2 != 0)
+            {
+                if (GetPrimeFactors(current).Count() == 1)
+                {
+                    primeNumbers.Add(current);
+                    count++;
+                }
+            }
+
+            current++;
+        }
+
+        return primeNumbers;
+    }
+
     // Get the prime factors of a given number 
     internal List<ulong> GetPrimeFactors(ulong num)
     {
@@ -30,7 +62,7 @@ internal sealed class PrimeNumbers
             }
             else
             {
-                for (ulong i = 3; i < Math.Sqrt(current); i += 2)
+                for (ulong i = 3; i <= Math.Sqrt(current); i += 2)
                 {
                     if (current % i == 0)
                     {

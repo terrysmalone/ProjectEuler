@@ -21,26 +21,15 @@ internal sealed class Problem9
         // a < b < c
         // a^2 + b^2 = c^2
         // a + b + c = num 
-        for (int c = num - 3; c >= 3; c--)
+
+        for (int a = 1; a <= (num-3)/3; a++)
         {
-            for (int b = c - 1; b >= 2; b--)
+            for(int b = a+1; b <= (num-a)/2; b++)
             {
-                if (c + b >= num)
+                int c = num - a - b;
+                if ((a*a) + (b*b) == c*c)
                 {
-                    continue;
-                }
-
-                for (int a = b - 1; a >= 1; a--)
-                {
-                    if (a + b + c != num)
-                    {
-                        continue;
-                    }
-
-                    if ((a * a) + (b * b) == c * c)
-                    {
-                        return a * b * c;
-                    }
+                    return a * b * c;
                 }
             }
         }

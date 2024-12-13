@@ -24,7 +24,7 @@ internal sealed class Problem9
 
         for (int a = 1; a <= (num-3)/3; a++)
         {
-            for(int b = a+1; b <= (num-a)/2; b++)
+            for(int b = a+1; b <= (num-a-1)/2; b++)
             {
                 int c = num - a - b;
                 if ((a*a) + (b*b) == c*c)

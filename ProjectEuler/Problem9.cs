@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,6 +34,8 @@ internal sealed class Problem9
                 }
             }
         }
+
+        Quaternion q = new Quaternion(new Vector3(1, 2, 3), 4);
 
         return -1;
     }

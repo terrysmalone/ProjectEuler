@@ -39,6 +39,36 @@ internal sealed class PrimeNumbers
         return primeNumbers;
     }
 
+    // Gets all prime numbers up to num
+    internal List<ulong> GetPrimeNumbersTo(ulong num)
+    {
+        if (num == 0)
+        {
+            throw new ArgumentException();
+        }
+
+        ulong current = 2;
+        var primeNumbers = new List<ulong>() { current };
+
+        current = 3;
+
+        while (current <= num)
+        {
+            // Even numbers past 2 aren't prime
+            if (current % 2 != 0)
+            {
+                if (GetPrimeFactors(current).Count() == 1)
+                {
+                    primeNumbers.Add(current);
+                }
+            }
+
+            current++;
+        }
+
+        return primeNumbers;
+    }
+
     // Get the prime factors of a given number 
     internal List<ulong> GetPrimeFactors(ulong num)
     {

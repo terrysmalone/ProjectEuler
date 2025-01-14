@@ -16,6 +16,15 @@ public class PrimeNumbersTests
         Assert.That(result, Is.EqualTo(expected.ToList()));
     }
 
+    [TestCase((ulong)9, new ulong[] { 2, 3, 5, 7 })]
+    public void TestGetPrimeNumbersTo(ulong num, ulong[] expected)
+    {
+        PrimeNumbers primeNumbers = new PrimeNumbers();
+        List<ulong> result = primeNumbers.GetPrimeNumbersTo(num);
+
+        Assert.That(result, Is.EqualTo(expected.ToList()));
+    }
+
     [TestCase((ulong)5, new ulong[] { 5 })]
     [TestCase((ulong)9, new ulong[] { 3, 3 })]
     [TestCase((ulong)10, new ulong[]{ 2, 5 })]
